@@ -4,3 +4,10 @@
 
 # GdUnit4 test reports
 reports/
+
+# Autonomous run logs stay local
+runs/
+
+# Machine-local
+.claude/settings.local.json
+.DS_Store
