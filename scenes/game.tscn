@@ -1,0 +1,291 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/game_scene.gd" id="1_lnu2h"]
+[ext_resource type="Script" path="res://scripts/ui/board_view.gd" id="2_lbhrr"]
+[ext_resource type="Script" path="res://scripts/ui/preview_view.gd" id="3_iywne"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57ef"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.101960786, 0.10980392, 0.16470589, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18431373, 0.19607843, 0.2784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.101960786, 0.10980392, 0.16470589, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18431373, 0.19607843, 0.2784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gee14"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.101960786, 0.10980392, 0.16470589, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18431373, 0.19607843, 0.2784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.101960786, 0.10980392, 0.16470589, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18431373, 0.19607843, 0.2784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Game" type="Control" unique_id=1339858653]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_lnu2h")
+
+[node name="Background" type="ColorRect" parent="." unique_id=219850832]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.07058824, 0.07450981, 0.10980392, 1)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=430718528]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Layout" type="HBoxContainer" parent="Center" unique_id=725405374]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="BoardFrame" type="PanelContainer" parent="Center/Layout" unique_id=1340259878]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
+
+[node name="BoardView" type="Control" parent="Center/Layout/BoardFrame" unique_id=870555666]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 640)
+layout_mode = 2
+script = ExtResource("2_lbhrr")
+
+[node name="Side" type="VBoxContainer" parent="Center/Layout" unique_id=618690911]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="NextTitle" type="Label" parent="Center/Layout/Side" unique_id=934411486]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.5411765, 0.56078434, 0.65882355, 1)
+text = "NEXT"
+
+[node name="PreviewFrame" type="PanelContainer" parent="Center/Layout/Side" unique_id=1647467921]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
+
+[node name="PreviewView" type="Control" parent="Center/Layout/Side/PreviewFrame" unique_id=433282409]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("3_iywne")
+
+[node name="ScoreTitle" type="Label" parent="Center/Layout/Side" unique_id=725559323]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.5411765, 0.56078434, 0.65882355, 1)
+text = "SCORE"
+
+[node name="ScoreValue" type="Label" parent="Center/Layout/Side" unique_id=119997073]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.9098039, 0.9137255, 0.9411765, 1)
+text = "000000"
+
+[node name="LevelTitle" type="Label" parent="Center/Layout/Side" unique_id=228032753]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.5411765, 0.56078434, 0.65882355, 1)
+text = "LEVEL"
+
+[node name="LevelValue" type="Label" parent="Center/Layout/Side" unique_id=71365703]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.9098039, 0.9137255, 0.9411765, 1)
+text = "0"
+
+[node name="LinesTitle" type="Label" parent="Center/Layout/Side" unique_id=645056422]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.5411765, 0.56078434, 0.65882355, 1)
+text = "LINES"
+
+[node name="LinesValue" type="Label" parent="Center/Layout/Side" unique_id=2037939422]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.9098039, 0.9137255, 0.9411765, 1)
+text = "0"
+
+[node name="HighScoreTitle" type="Label" parent="Center/Layout/Side" unique_id=634825603]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.5411765, 0.56078434, 0.65882355, 1)
+text = "HIGH SCORE"
+
+[node name="HighScoreValue" type="Label" parent="Center/Layout/Side" unique_id=1522703548]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.9098039, 0.9137255, 0.9411765, 1)
+text = "000000"
+
+[node name="HintLabel" type="Label" parent="Center/Layout/Side" unique_id=938881761]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.5411765, 0.56078434, 0.65882355, 1)
+text = "P  pause"
+
+[node name="PauseOverlay" type="ColorRect" parent="." unique_id=1411324158]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.72)
+
+[node name="PauseCenter" type="CenterContainer" parent="PauseOverlay" unique_id=99118202]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PausePanel" type="PanelContainer" parent="PauseOverlay/PauseCenter" unique_id=73655990]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gee14")
+
+[node name="PauseBox" type="VBoxContainer" parent="PauseOverlay/PauseCenter/PausePanel" unique_id=1387642963]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="PauseTitle" type="Label" parent="PauseOverlay/PauseCenter/PausePanel/PauseBox" unique_id=1076890935]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.9098039, 0.9137255, 0.9411765, 1)
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseOverlay/PauseCenter/PausePanel/PauseBox" unique_id=1989329167]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Resume"
+
+[node name="PauseMenuButton" type="Button" parent="PauseOverlay/PauseCenter/PausePanel/PauseBox" unique_id=1712581209]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Main menu"
+
+[node name="GameOverOverlay" type="ColorRect" parent="." unique_id=695280043]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.72)
+
+[node name="GameOverCenter" type="CenterContainer" parent="GameOverOverlay" unique_id=768849771]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GameOverPanel" type="PanelContainer" parent="GameOverOverlay/GameOverCenter" unique_id=700836125]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="GameOverBox" type="VBoxContainer" parent="GameOverOverlay/GameOverCenter/GameOverPanel" unique_id=277277385]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="GameOverTitle" type="Label" parent="GameOverOverlay/GameOverCenter/GameOverPanel/GameOverBox" unique_id=1069679731]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.9098039, 0.9137255, 0.9411765, 1)
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="GameOverOverlay/GameOverCenter/GameOverPanel/GameOverBox" unique_id=2109809243]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.9098039, 0.9137255, 0.9411765, 1)
+text = "SCORE  000000"
+horizontal_alignment = 1
+
+[node name="NewRecordLabel" type="Label" parent="GameOverOverlay/GameOverCenter/GameOverPanel/GameOverBox" unique_id=1459860629]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.96862745, 0.7882353, 0.28235295, 1)
+text = "NEW HIGH SCORE"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="GameOverOverlay/GameOverCenter/GameOverPanel/GameOverBox" unique_id=1197049496]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Play again"
+
+[node name="MenuButton" type="Button" parent="GameOverOverlay/GameOverCenter/GameOverPanel/GameOverBox" unique_id=217125256]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Main menu"
+
+[node name="FallTimer" type="Timer" parent="." unique_id=2009215104]
+unique_name_in_owner = true

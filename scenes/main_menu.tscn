@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://o6yxr6dy304n"]
+
+[ext_resource type="Script" uid="uid://b2vovmcpbfp26" path="res://scripts/ui/main_menu.gd" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.101960786, 0.10980392, 0.16470589, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18431373, 0.19607843, 0.2784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="MainMenu" type="Control" unique_id=1956442471]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_l6cm7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1334017419]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.07058824, 0.07450981, 0.10980392, 1)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=462684690]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Menu" type="VBoxContainer" parent="Center" unique_id=18739882]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="TitleBox" type="HBoxContainer" parent="Center/Menu" unique_id=1895817964]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="Center/Menu" unique_id=559862080]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0.9137255, 0.9411765, 1)
+theme_override_font_sizes/font_size = 20
+text = "HIGH SCORE  000000"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="Center/Menu" unique_id=58400405]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="Center/Menu" unique_id=1149108200]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+
+[node name="ControlsPanel" type="PanelContainer" parent="Center/Menu" unique_id=1118285486]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekxnf")
+
+[node name="ControlsBox" type="VBoxContainer" parent="Center/Menu/ControlsPanel" unique_id=19362437]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ControlsTitle" type="Label" parent="Center/Menu/ControlsPanel/ControlsBox" unique_id=906022808]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5411765, 0.56078434, 0.65882355, 1)
+theme_override_font_sizes/font_size = 14
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="ControlsGrid" type="GridContainer" parent="Center/Menu/ControlsPanel/ControlsBox" unique_id=1731412222]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 6
+columns = 2
